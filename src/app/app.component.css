@@ -1,0 +1,20 @@
+
+
+
+.links-box {
+  border: 1px solid black;
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.router-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.active-link {
+  font-weight: bold;
+  color: green;
+  background-color: #c5c7c7;
+}
