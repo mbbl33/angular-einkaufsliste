@@ -1,11 +1,11 @@
 <h2>Checkliste:</h2>
-<div *ngFor="let item of items">
-  <div [ngClass]="{'strikethrough': isBought}" >
+<div *ngFor="let item of listItemsService.getListItems()">
+  <div [ngClass]="{'strikethrough': item.isBought}" >
     <app-list-item>
-      <h3>{{item.toString()}} </h3>
+      <h3>{{item.name}} </h3>
       <div class="list-item-content">
-        <span>Menge: 10</span>
-        <input type="checkbox" [(ngModel)]="isBought">
+        <span>Menge: {{item.amount}}</span>
+        <input type="checkbox" [(ngModel)]="item.isBought">
       </div>
     </app-list-item>
   </div>

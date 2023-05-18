@@ -2,5 +2,14 @@
 <app-list-item>
   <p>Name:<input [(ngModel)]="newItemName"></p>
   <p>Menge:<input type="number" [(ngModel)]="newItemAmount"></p>
-  <!--<button @click="() => addElement(newItemName, newItemAmount)">Element hinzufügen</button>-->
+  <button (click)="listItemsService.addElement(newItemName, newItemAmount)">Element hinzufügen</button>
 </app-list-item>
+
+<h2>Editor:</h2>
+<div *ngFor="let item of listItemsService.getListItems(), let i = index">
+  <app-list-item>
+    <p>Name:<input [(ngModel)]="item.name"></p>
+    <p>Menge:<input type="number" [(ngModel)]="item.amount"></p>
+    <button (click)="listItemsService.removeElement(i)">Entfernen</button>
+  </app-list-item>
+</div>

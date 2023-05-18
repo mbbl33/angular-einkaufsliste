@@ -1,13 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ListItemsService, Item} from '../Services/list-items.service'
 
-class Item {
-  name: string = '';
-  amount: number = 0;
-  Item(name: string, amount:number){
-    this.name = name;
-    this.amount = amount;
-  }
-}
 
 @Component({
   selector: 'app-edit-list',
@@ -15,8 +8,10 @@ class Item {
   styleUrls: ['./edit-list.component.css']
 })
 export class EditListComponent {
-  newItemName: string = '';
-  newItemAmount: number = 0;
+  public newItemName: string = '';
+  public newItemAmount: number = 1;
 
-  //listItems: Item [] = {};
+  constructor(public listItemsService: ListItemsService) {
+  }
+
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ListItemsService} from "../Services/list-items.service";
 
 @Component({
   selector: 'app-checkliste',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./checkliste.component.css']
 })
 export class ChecklisteComponent {
-  items :string[] = ["Kuchen", "Schnaps", "Wasser"]
-  isBought: boolean = false;
+  constructor(public listItemsService: ListItemsService) {
+  }
 }
